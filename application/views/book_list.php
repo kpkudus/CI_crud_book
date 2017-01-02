@@ -13,24 +13,18 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>1</td>
-            <td>The Count of Monte Cristo</td>
-            <td>Alexander Dumas</td>
-            <td>Novel</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Mein Kamf</td>
-            <td>Adolf Hitler</td>
-            <td>Biography</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Heike Monogatari</td>
-            <td>Eiji Yoshikawa</td>
-            <td>Novel</td>
-        </tr>
+      <?php
+      //loop books data
+foreach ($books as $book) {
+  # code...
+  echo '  <tr>
+        <td>'.$book->id.'</td>
+        <td>'.$book->book_title.'</td>
+        <td>'.$book->author_name.'</td>
+        <td>'.$book->type.'</td>
+    </tr>';
+}
+       ?>
     </tbody>
 
 </table>
