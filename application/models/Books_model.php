@@ -2,62 +2,12 @@
 //application/models/Books_model.php
 class Books_model extends CI_Model
 {
-
-	private $id;
-	private $book_title;
-	private $author_name;
-	private $type;
-
-
-//set prop values
+  public $id;
+  public $book_title;
+  public $author_name;
+  public $type;
 
 
-	public function set_id($val)
-	{
-		$this->id = $val;
-		return $this;
-	}
-
-	public function set_book_title($val)
-	{
-		$this->book_title = $val;
-		return $this;
-	}
-
-	public function set_author_name($val)
-	{
-		$this->author_name = $val;
-		return $this;
-	}
-
-	public function set_type($val)
-	{
-		$this->type = $val;
-		return $this;
-	}
-
-
-//get prop values
-
-	public function get_id()
-	{
-		return $this->id;
-	}
-
-	public function get_book_title()
-	{
-		return $this->book_title;
-	}
-
-	public function get_author_name()
-	{
-		return $this->author_name;
-	}
-
-	public function get_type()
-	{
-		return $this->type;
-	}
 
 	public function create()
 	{
@@ -68,12 +18,21 @@ class Books_model extends CI_Model
 			'type'=>$this->type,
 			)
 		);
+    return true;
 	}
 
 
 	public function get()
 	{
+    //equal as 'select * from books'
 		$q = $this->db->get("books");
+		return $q->result();
+	}
+
+  public function show($id)
+	{
+    //equal as 'select * from books where id = $id'
+		$q = $this->db->get_where("books",array('id'=>$id));
 		return $q->result();
 	}
 

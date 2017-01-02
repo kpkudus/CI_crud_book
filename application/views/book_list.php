@@ -1,4 +1,4 @@
-
+<?php echo $this->session->flashdata('msg');?>
 <h1>Book List</h1>
 <p>
 
@@ -28,3 +28,7 @@ foreach ($books as $book) {
     </tbody>
 
 </table>
+
+<br>
+<?php
+echo anchor('books/add','Add new item') ?>
