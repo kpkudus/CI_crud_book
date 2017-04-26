@@ -10,6 +10,7 @@
             <th>Title</th>
             <th>Author</th>
             <th>Type</th>
+            <th>Option</th>
         </tr>
     </thead>
     <tbody>
@@ -22,6 +23,10 @@ foreach ($books as $book) {
         <td>'.$book->book_title.'</td>
         <td>'.$book->author_name.'</td>
         <td>'.$book->type.'</td>
+        <td>'.anchor('books/detail/'.$book->id,'Show').'
+        '.anchor('books/edit/'.$book->id,'Edit').'
+        '.anchor('books/delete/'.$book->id,'Delete').'
+        </td>
     </tr>';
 }
        ?>

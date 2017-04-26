@@ -33,7 +33,7 @@ class Books_model extends CI_Model
 	{
     //equal as 'select * from books where id = $id'
 		$q = $this->db->get_where("books",array('id'=>$id));
-		return $q->result();
+		return $q->row();
 	}
 
 
